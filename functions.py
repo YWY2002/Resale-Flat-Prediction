@@ -39,4 +39,6 @@ def batchGradientDescent(loss, lossGradient, feature_dim, training_data, phi):
         step = 0.1
         # step = 1 / math.sqrt(i + 1)
         w = w - step * gradient
-        print(f'epoch: {i} Cost: {cost:.8f} Loss_gradient: {gradient} Weight: {w}')
+        if (i % 10 == 0):
+            print(f'epoch: {i} Cost: {cost:.8f} Loss_gradient: {gradient} Weight: {w}')
+    return w
